@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" role="img" aria-labelledby="title desc">
+  <title id="title">Ebony Rift asymmetric wooden slingshot</title><desc id="desc">Dark handcrafted wooden slingshot against a warm studio backdrop</desc>
+  <defs><radialGradient id="b"><stop stop-color="#5d4228"/><stop offset="1" stop-color="#09090b"/></radialGradient><linearGradient id="w" x2="1" y2="1"><stop stop-color="#4b3021"/><stop offset=".5" stop-color="#17110d"/><stop offset="1" stop-color="#7a5230"/></linearGradient></defs>
+  <rect width="720" height="540" fill="url(#b)"/><circle cx="560" cy="100" r="170" fill="#fbbf2410"/>
+  <path d="M290 442c-16-87 11-135 23-197L235 96c-12-24 21-46 37-23l91 123 92-123c17-22 49 0 37 24l-78 148c13 63 39 111 23 197-11 54-137 54-147 0Z" fill="url(#w)" stroke="#d6a860" stroke-width="5"/>
+  <path d="M302 326c37 23 75 23 123 0M318 374c35 18 67 18 103 0" fill="none" stroke="#b98957" stroke-width="4" opacity=".55"/>
+  <text x="38" y="488" fill="#f4f4f5" font-family="sans-serif" font-size="28" font-weight="700">EBONY RIFT</text><text x="40" y="516" fill="#fbbf24" font-family="sans-serif" font-size="14" letter-spacing="4">ZENITH.FORK</text>
+</svg>

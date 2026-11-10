@@ -1,0 +1,73 @@
+---
+import "../../styles/global.css";
+
+interface BlogFrontmatter {
+  title: string;
+  description: string;
+  keywords: string[];
+  date: string | Date;
+  path: string;
+}
+
+interface BlogModule {
+  frontmatter: BlogFrontmatter;
+}
+
+const modules = import.meta.glob<BlogModule>("./*.md", { eager: true });
+const posts = Object.values(modules)
+  .map(({ frontmatter }) => frontmatter)
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+const canonicalUrl = new URL("/blog/", Astro.site ?? "https://zenith-fork.github.io");
+---
+
+<!doctype html>
+<html lang="en" class="bg-zinc-950">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Wooden Slingshot Journal | Zenith Fork Studio</title>
+    <meta
+      name="description"
+      content="Practical guides to handmade wooden slingshots, exotic hardwood frames, latex flat bands, maintenance, and target-practice ammo."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+  </head>
+
+  <body class="min-h-screen bg-zinc-950 text-zinc-300 antialiased">
+    <header class="border-b border-zinc-800">
+      <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-5" aria-label="Blog navigation">
+        <a class="font-black tracking-[0.22em] text-white" href="/">ZENITH.FORK</a>
+        <a class="text-sm font-semibold text-amber-400 hover:text-amber-300" href="/">← Back to Store</a>
+      </nav>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-6 py-16 sm:py-24">
+      <header class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-amber-400">Workshop journal</p>
+        <h1 class="mt-4 text-4xl font-bold tracking-tight text-white sm:text-6xl">Wooden Slingshot Guides</h1>
+        <p class="mt-6 text-lg leading-8 text-zinc-400">
+          Field notes on hardwood selection, handmade slingshot construction, latex band setup, maintenance, and consistent target practice.
+        </p>
+      </header>
+
+      <section class="mt-14 grid gap-6" aria-labelledby="articles-heading">
+        <h2 id="articles-heading" class="sr-only">Latest articles</h2>
+        {posts.map((post) => (
+          <article class="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-7 transition hover:border-amber-500/50 sm:p-9">
+            <time class="text-sm text-zinc-500" datetime={new Date(post.date).toISOString()}>
+              {new Intl.DateTimeFormat("en-US", { year: "numeric", month: "long", day: "numeric" }).format(new Date(post.date))}
+            </time>
+            <h2 class="mt-3 text-2xl font-semibold text-white">
+              <a class="transition hover:text-amber-300" href={post.path}>{post.title}</a>
+            </h2>
+            <p class="mt-4 leading-7 text-zinc-400">{post.description}</p>
+            <a class="mt-6 inline-flex font-semibold text-amber-400 hover:text-amber-300" href={post.path}>Read guide →</a>
+          </article>
+        ))}
+      </section>
+    </main>
+  </body>
+</html>

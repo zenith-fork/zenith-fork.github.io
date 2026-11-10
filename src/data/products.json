@@ -1,0 +1,52 @@
+[
+  {
+    "id": "fork-ebony-rift",
+    "category": "forks",
+    "name": "Ebony Rift Wooden Slingshot",
+    "material": "Gaboon ebony, brass pins, natural oil finish",
+    "description": "A palm-sculpted, asymmetric wooden slingshot with a comfortable grip, rounded band grooves, and a one-of-one ebony grain pattern.",
+    "price": 89.0,
+    "image": "/images/products/ebony-rift-asymmetric-fork.svg",
+    "checkoutUrl": "https://zenith-fork.github.io/checkout/ebony-rift"
+  },
+  {
+    "id": "fork-ziricote-arc",
+    "category": "forks",
+    "name": "Ziricote Arc Wooden Slingshot",
+    "material": "Ziricote hardwood, G10 liners, hardwax finish",
+    "description": "A compact handmade wooden slingshot shaped for comfortable target practice, with offset tips and a stable tropical hardwood frame.",
+    "price": 79.0,
+    "image": "/images/products/ziricote-arc-handmade-fork.svg",
+    "checkoutUrl": "https://zenith-fork.github.io/checkout/ziricote-arc"
+  },
+  {
+    "id": "bands-velocity-taper",
+    "category": "bands",
+    "name": "Tapered Latex Flat Bands",
+    "material": "0.60 mm premium natural latex",
+    "description": "Replacement 22–14 mm tapered latex band sets cut for a smooth pull and consistent wooden slingshot target practice.",
+    "price": 12.99,
+    "image": "/images/products/velocity-taper-flat-bands.svg",
+    "checkoutUrl": "https://zenith-fork.github.io/checkout/velocity-taper-bands"
+  },
+  {
+    "id": "ammo-steel-9-5",
+    "category": "ammo",
+    "name": "9.5 mm Heavy Steel Ammo",
+    "material": "Hardened carbon steel, polished finish",
+    "description": "Weight-sorted steel balls for consistent slingshot target practice, packed separately from wooden slingshots in an unmarked parcel.",
+    "price": 24.99,
+    "image": "/images/products/9-5mm-heavy-steel-ammo.svg",
+    "checkoutUrl": "https://zenith-fork.github.io/checkout/steel-ammo-9-5"
+  },
+  {
+    "id": "ammo-eco-clay",
+    "category": "ammo",
+    "name": "Eco-Clay Practice Pellets",
+    "material": "Kiln-dried biodegradable clay",
+    "description": "Uniform biodegradable clay balls for outdoor slingshot target practice, designed to break down naturally after use.",
+    "price": 16.99,
+    "image": "/images/products/eco-clay-practice-pellets.svg",
+    "checkoutUrl": "https://zenith-fork.github.io/checkout/eco-clay-pellets"
+  }
+]
