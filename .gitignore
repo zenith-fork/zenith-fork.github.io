@@ -40,3 +40,6 @@ coverage/
 *.tmp
 *.temp
 .cache/
+
+# Local high-resolution source images (optimized WebP files live in public/)
+original-images/
