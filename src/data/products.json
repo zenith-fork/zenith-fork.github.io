@@ -1,52 +1,46 @@
 [
-  {
-    "id": "fork-ebony-rift",
-    "category": "forks",
-    "name": "Ebony Rift Wooden Slingshot",
-    "material": "Gaboon ebony, brass pins, natural oil finish",
-    "description": "A palm-sculpted, asymmetric wooden slingshot with a comfortable grip, rounded band grooves, and a one-of-one ebony grain pattern.",
-    "price": 89.0,
-    "image": "/images/products/ebony-rift-asymmetric-fork.svg",
-    "checkoutUrl": "https://zenith-fork.github.io/checkout/ebony-rift"
-  },
-  {
-    "id": "fork-ziricote-arc",
-    "category": "forks",
-    "name": "Ziricote Arc Wooden Slingshot",
-    "material": "Ziricote hardwood, G10 liners, hardwax finish",
-    "description": "A compact handmade wooden slingshot shaped for comfortable target practice, with offset tips and a stable tropical hardwood frame.",
-    "price": 79.0,
-    "image": "/images/products/ziricote-arc-handmade-fork.svg",
-    "checkoutUrl": "https://zenith-fork.github.io/checkout/ziricote-arc"
-  },
-  {
-    "id": "bands-velocity-taper",
-    "category": "bands",
-    "name": "Tapered Latex Flat Bands",
-    "material": "0.60 mm premium natural latex",
-    "description": "Replacement 22–14 mm tapered latex band sets cut for a smooth pull and consistent wooden slingshot target practice.",
-    "price": 12.99,
-    "image": "/images/products/velocity-taper-flat-bands.svg",
-    "checkoutUrl": "https://zenith-fork.github.io/checkout/velocity-taper-bands"
-  },
-  {
-    "id": "ammo-steel-9-5",
-    "category": "ammo",
-    "name": "9.5 mm Heavy Steel Ammo",
-    "material": "Hardened carbon steel, polished finish",
-    "description": "Weight-sorted steel balls for consistent slingshot target practice, packed separately from wooden slingshots in an unmarked parcel.",
-    "price": 24.99,
-    "image": "/images/products/9-5mm-heavy-steel-ammo.svg",
-    "checkoutUrl": "https://zenith-fork.github.io/checkout/steel-ammo-9-5"
-  },
-  {
-    "id": "ammo-eco-clay",
-    "category": "ammo",
-    "name": "Eco-Clay Practice Pellets",
-    "material": "Kiln-dried biodegradable clay",
-    "description": "Uniform biodegradable clay balls for outdoor slingshot target practice, designed to break down naturally after use.",
-    "price": 16.99,
-    "image": "/images/products/eco-clay-practice-pellets.svg",
-    "checkoutUrl": "https://zenith-fork.github.io/checkout/eco-clay-pellets"
-  }
+    {
+        "id": "fork-desert-ironwood-flying-tiger",
+        "category": "forks",
+        "name": "Desert Ironwood \"Flying Tiger\" Quick-Clamp Slingshot",
+        "material": "Genuine Sonoran desert ironwood, solid brass quick-clamp tip caps, hand-polished satin finish",
+        "description": "Carved from ultra-dense, naturally lustrous Desert Ironwood featuring rich golden-brown grain. Equipped with solid brass screw-down quick-clamp tips that allow tool-free flat-band changes in seconds without tearing or fraying the latex. The classic Flying Tiger ergonomic handle flares smoothly at the base for a rock-solid pinch or thumb-support grip. One-of-one piece—you will receive the exact fork pictured.",
+        "price": "USD 128.00",
+        "images": [
+            "/images/products/IMG_3114.PNG",
+            "/images/products/IMG_3115.PNG",
+            "/images/products/IMG_3116.PNG",
+            "/images/products/IMG_3117.PNG",
+            "/images/products/IMG_3118.PNG"
+        ]
+    },
+    {
+        "id": "fork-crimson-hardwood-classic-80",
+        "category": "forks",
+        "name": "Crimson Hardwood \"Sculpted U\" Traditional Slingshot (80mm)",
+        "material": "High-density crimson rosewood, all-wood metal-free construction, hand-rubbed natural oil & wax finish",
+        "description": "Hand-carved from high-density crimson hardwood featuring rich, flowing dark-red grain and a warm satin sheen. Specs: 80mm outer fork width, 120mm height, flared metal-free tips for traditional wrap-and-tuck flat-band tying, and a sculpted waisted handle ideal for pinch or thumb-support grips. One-of-one piece—you will receive the exact fork pictured.",
+        "price": "USD 128.00",
+        "images": [
+            "/images/products/IMG_3128.PNG",
+            "/images/products/IMG_3129.PNG",
+            "/images/products/IMG_3130.PNG",
+            "/images/products/IMG_3131.PNG",
+            "/images/products/IMG_3132.PNG"
+        ]
+    },
+    {
+        "id": "bands-pro-latex-pack-10",
+        "category": "bands",
+        "name": "Pro Tapered Flat Bandsets (10-Pack)",
+        "material": "Natural Malaysian latex, microfiber non-slip pouches, hand-tied amber belt",
+        "description": "Precision-cut 20-12mm tapered flat bands engineered for snappy retraction and consistent accuracy. Fitted with durable, anti-slip microfiber pouches and sealed in a UV-blocking foil pack to preserve latex elasticity. Compatible with all quick-clamp and wrap-and-tuck forks.",
+        "price": "USD 32.00",
+        "images": [
+            "/images/products/IMG_3124.PNG",
+            "/images/products/IMG_3125.PNG",
+            "/images/products/IMG_3126.PNG",
+            "/images/products/IMG_3127.PNG"
+        ]
+    }
 ]

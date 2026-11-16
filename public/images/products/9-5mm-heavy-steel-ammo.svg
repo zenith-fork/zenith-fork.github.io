@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" role="img" aria-labelledby="title desc">
-  <title id="title">9.5 millimeter heavy steel slingshot ammunition</title><desc id="desc">Polished steel spheres arranged in a precision grid</desc><defs><radialGradient id="s" cx="30%" cy="25%"><stop stop-color="#fff"/><stop offset=".25" stop-color="#a1a1aa"/><stop offset=".7" stop-color="#3f3f46"/><stop offset="1" stop-color="#09090b"/></radialGradient></defs><rect width="720" height="540" fill="#101014"/>
-  <g fill="url(#s)"><circle cx="190" cy="145" r="58"/><circle cx="325" cy="145" r="58"/><circle cx="460" cy="145" r="58"/><circle cx="257" cy="275" r="58"/><circle cx="392" cy="275" r="58"/><circle cx="527" cy="275" r="58"/></g>
-  <text x="38" y="488" fill="#f4f4f5" font-family="sans-serif" font-size="28" font-weight="700">9.5 MM HEAVY STEEL</text><text x="40" y="516" fill="#fbbf24" font-family="sans-serif" font-size="14" letter-spacing="4">WEIGHT-SORTED AMMO</text>
-</svg>

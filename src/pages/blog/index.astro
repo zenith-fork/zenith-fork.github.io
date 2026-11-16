@@ -19,6 +19,9 @@ const posts = Object.values(modules)
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 const canonicalUrl = new URL("/blog/", Astro.site ?? "https://zenith-fork.github.io");
+const socialImageUrl = new URL("/images/zenith-fork-social.png", canonicalUrl);
+const pageTitle = "Wooden Slingshot Journal | Zenith Fork Studio";
+const pageDescription = "Practical guides to handmade wooden slingshots, exotic hardwood frames, latex flat bands, setup, care, and target practice.";
 ---
 
 <!doctype html>
@@ -26,14 +29,26 @@ const canonicalUrl = new URL("/blog/", Astro.site ?? "https://zenith-fork.github
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Wooden Slingshot Journal | Zenith Fork Studio</title>
-    <meta
-      name="description"
-      content="Practical guides to handmade wooden slingshots, exotic hardwood frames, latex flat bands, maintenance, and target-practice ammo."
-    />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Zenith Fork Studio" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Handcrafted ebony wooden slingshot by Zenith Fork Studio" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content="Handcrafted ebony wooden slingshot by Zenith Fork Studio" />
   </head>
 
   <body class="min-h-screen bg-zinc-950 text-zinc-300 antialiased">

@@ -7,6 +7,7 @@ interface BlogFrontmatter {
   keywords: string[];
   date: string | Date;
   path: string;
+  image?: string;
 }
 
 interface Props {
@@ -30,6 +31,7 @@ if (!frontmatter.date || !frontmatter.path) {
 
 const siteOrigin = Astro.site ?? new URL("https://zenith-fork.github.io");
 const canonicalUrl = new URL(frontmatter.path, siteOrigin);
+const socialImageUrl = new URL(frontmatter.image ?? "/images/zenith-fork-social.png", siteOrigin);
 const publishDate = new Date(frontmatter.date);
 const displayDate = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
@@ -45,6 +47,7 @@ const articleSchema = {
   datePublished: publishDate.toISOString(),
   dateModified: publishDate.toISOString(),
   mainEntityOfPage: canonicalUrl.toString(),
+  image: socialImageUrl.toString(),
   author: { "@type": "Organization", name: "Zenith Fork Studio", url: siteOrigin.toString() },
   publisher: { "@type": "Organization", name: "Zenith Fork Studio", url: siteOrigin.toString() },
 };
@@ -62,14 +65,23 @@ const articleSchema = {
     <link rel="canonical" href={canonicalUrl} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Zenith Fork Studio" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={frontmatter.title} />
     <meta property="og:description" content={frontmatter.description} />
     <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${frontmatter.title} — Zenith Fork Studio`} />
     <meta property="article:published_time" content={publishDate.toISOString()} />
+    <meta property="article:modified_time" content={publishDate.toISOString()} />
     <meta property="article:author" content="Zenith Fork Studio" />
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={frontmatter.title} />
     <meta name="twitter:description" content={frontmatter.description} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content={`${frontmatter.title} — Zenith Fork Studio`} />
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   </head>
   <body class="min-h-screen bg-zinc-950 text-zinc-300 antialiased">
@@ -95,8 +107,9 @@ title: "Under 60 characters"
 description: "Under 160 characters."
 keywords:
   - custom wooden slingshot
-  - precision slingshot ammo
+  - tapered latex flat bands
 date: 2026-01-15
 path: /blog/example-article/
+image: /images/zenith-fork-social.png # Optional; defaults to the site sharing image
 ---
 -->
