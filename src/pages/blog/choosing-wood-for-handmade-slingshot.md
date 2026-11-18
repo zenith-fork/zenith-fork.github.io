@@ -64,6 +64,18 @@ When people ask about the best wood for a slingshot, they often expect a list ra
 
 A dense wood allows a compact frame to feel planted in the hand, but the edges and grip still need to be comfortable. A medium-density wood can support a fuller, more rounded handle without adding too much weight. Laminated construction opens another set of options, provided the mating surfaces, adhesive, clamping, and curing are all handled correctly.
 
+The [Desert Ironwood Flying Tiger slingshot](/#fork-desert-ironwood-flying-tiger) is one example of a dense hardwood used in a compact, hand-shaped frame rather than carried over from a lighter-wood pattern.
+
+<figure class="not-prose my-9 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/80">
+  <a class="group block" href="/#fork-desert-ironwood-flying-tiger" aria-label="View the Desert Ironwood Flying Tiger slingshot">
+    <img class="aspect-square w-full object-cover transition duration-500 group-hover:scale-[1.02]" src="/images/products/IMG_3114.webp" alt="Desert Ironwood Flying Tiger handmade wooden slingshot with brass quick-clamp tips" width="1200" height="1200" loading="lazy" decoding="async" />
+    <figcaption class="flex items-center justify-between gap-4 px-5 py-4 text-sm text-zinc-300">
+      <span>Desert Ironwood “Flying Tiger”</span>
+      <span class="font-semibold text-amber-400">View the slingshot →</span>
+    </figcaption>
+  </a>
+</figure>
+
 This is also where asymmetry can help. A frame shaped specifically for the left or right hand does not need to carry equal material everywhere. It can be fuller where the palm needs support and slimmer where the fingers need clearance. The result should settle into the hand naturally, without forcing the wrist into position.
 
 ## Finish should protect the wood, not bury it
