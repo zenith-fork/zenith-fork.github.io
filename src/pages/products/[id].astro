@@ -1,0 +1,52 @@
+---
+import products from '../../data/products.json';
+import SlingshotCard from '../../components/SlingshotCard.astro';
+import '../../styles/global.css';
+export function getStaticPaths() {
+  return products.map(product => ({ params: { id: product.id }, props: { product } }));
+}
+const { product } = Astro.props;
+const canonical = new URL(`/products/${product.id}/`, Astro.site);
+const image = new URL(product.images[0], Astro.site);
+const title = `${product.name} | Zenith Fork`;
+const description = `${product.name}. ${product.price}. See exact-item photos, material details, and contact Zenith Fork Studio to confirm availability.`;
+const schema = {
+  '@context': 'https://schema.org', '@type': 'Product', '@id': canonical.toString(),
+  name: product.name, description: product.description, material: product.material,
+  image: product.images.map(src => new URL(src, Astro.site).toString()),
+  url: canonical.toString(), brand: { '@type': 'Brand', name: 'Zenith Fork Studio' },
+  offers: { '@type': 'Offer', price: String(product.price).match(/\d+(?:\.\d+)?/)?.[0], priceCurrency: 'USD', url: canonical.toString(), itemCondition: 'https://schema.org/NewCondition', seller: { '@type': 'Organization', name: 'Zenith Fork Studio', email: 'hucdmail@gmail.com' } }
+};
+const related = products.filter(p => p.id !== product.id && p.category === product.category).slice(0, 2);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
+    <title>{title}</title><meta name="description" content={description} />
+    <link rel="canonical" href={canonical} /><meta name="robots" content="index, follow" />
+    <meta property="og:type" content="product" /><meta property="og:title" content={title} />
+    <meta property="og:description" content={description} /><meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} /><meta property="og:image:alt" content={product.name} />
+    <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} /><meta name="twitter:image" content={image} />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="bg-zinc-950 text-zinc-300">
+    <header class="border-b border-zinc-800 px-6 py-6"><nav class="mx-auto flex max-w-6xl flex-wrap justify-between gap-4" aria-label="Main navigation"><a class="font-bold text-white" href="/">ZENITH.FORK</a><div class="flex gap-6"><a href="/">Store</a><a href="/blog/">Learn</a><a href="/about/">Workshop</a></div></nav></header>
+    <main class="mx-auto max-w-6xl px-6 py-12">
+      <nav class="mb-8 text-sm" aria-label="Breadcrumb"><a href="/">Store</a> / <span>{product.name}</span></nav>
+      <h1 class="mb-8 max-w-3xl text-3xl font-semibold leading-tight text-white sm:text-4xl">{product.name}</h1>
+      <div class="grid items-start gap-12 lg:grid-cols-2">
+        <SlingshotCard {...product} />
+        <div class="space-y-8 leading-8">
+          <section><h2 class="mb-4 text-2xl font-semibold text-white">At a glance</h2><p>{product.description}</p><dl class="mt-6 space-y-3"><div><dt class="font-semibold text-white">Material</dt><dd>{product.material}</dd></div><div><dt class="font-semibold text-white">Listed price</dt><dd>{product.price}</dd></div><div><dt class="font-semibold text-white">Ordering</dt><dd>Email to confirm availability, destination, shipping, and final payment details before paying.</dd></div></dl></section>
+          <section><h2 class="mb-4 text-2xl font-semibold text-white">Before ordering</h2><h3 class="font-semibold text-white">Will I receive the pictured item?</h3><p>{product.category === 'forks' ? 'Our one-of-one wooden frames are sold as the exact piece pictured. Confirm availability by email before payment.' : 'Photos show the bandset product. Confirm the required dimensions and attachment compatibility by email.'}</p><h3 class="mt-5 font-semibold text-white">Can you ship to my location?</h3><p>Contact us with your country and region. We do not accept requests for Singapore or Australia (NSW/VIC). Do not request delivery where these items are prohibited.</p><h3 class="mt-5 font-semibold text-white">What should I compare before choosing?</h3><p>Compare the finished measurements, grip profile, and band attachment method. If a detail is missing, ask for confirmation rather than estimating from a photo.</p></section>
+          <section><h2 class="mb-4 text-2xl font-semibold text-white">From the workshop journal</h2><ul class="space-y-3"><li><a class="text-amber-400 underline" href="/blog/how-to-choose-solid-wood-slingshot/">How to choose a solid-wood slingshot</a></li><li><a class="text-amber-400 underline" href="/blog/buying-one-of-one-handmade-slingshot-online/">Buying a handmade wooden slingshot online</a></li><li><a class="text-amber-400 underline" href="/blog/what-does-80mm-fork-width-mean/">Understanding wooden slingshot dimensions</a></li><li><a class="text-amber-400 underline" href="/blog/how-to-store-latex-slingshot-bands/">Caring for replacement latex bands</a></li></ul></section>
+        </div>
+      </div>
+      {related.length > 0 && <section class="mt-20"><h2 class="mb-8 text-2xl font-semibold text-white">Compare related pieces</h2><div class="grid gap-6 sm:grid-cols-2">{related.map(p => <a class="rounded-2xl border border-zinc-800 p-6 hover:border-amber-400" href={`/products/${p.id}/`}>{p.name} →</a>)}</div></section>}
+    </main>
+    <footer class="border-t border-zinc-800 px-6 py-10 text-center text-sm"><a href="mailto:hucdmail@gmail.com">hucdmail@gmail.com</a> · <a href="/about/">About Zenith Fork Studio</a></footer>
+  </body>
+</html>

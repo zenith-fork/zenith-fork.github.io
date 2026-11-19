@@ -8,7 +8,7 @@ keywords:
   - handmade wooden slingshot
   - latex flat bands
   - wooden slingshot band attachment
-date: 2026-11-18
+date: 2026-11-12
 path: /blog/quick-clamp-vs-wrap-and-tuck-slingshot-bands/
 ---
 

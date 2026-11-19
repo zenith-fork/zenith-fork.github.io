@@ -30,6 +30,36 @@
         ]
     },
     {
+        "id": "fork-flying-tiger-solid-wood-round-tip-80",
+        "category": "forks",
+        "name": "Flying Tiger Solid-Wood Round-Tip Slingshot (80 mm)",
+        "material": "Solid dense red-brown hardwood, brass tip plates, hand-polished oil and wax finish",
+        "description": "A one-of-one Flying Tiger solid-wood slingshot with an 80 mm outer fork width, 14 mm rounded fork tips, and a 120 mm overall height. Its deep-U profile and sculpted waist provide a comfortable, secure hold for pinch or thumb-support grips. You will receive the exact fork pictured.",
+        "price": "USD 128.00",
+        "images": [
+            "/images/products/IMG_3138.webp",
+            "/images/products/IMG_3139.webp",
+            "/images/products/IMG_3140.webp",
+            "/images/products/IMG_3141.webp",
+            "/images/products/IMG_3142.webp"
+        ]
+    },
+    {
+        "id": "fork-large-mantis-solid-wood-80",
+        "category": "forks",
+        "name": "Large Mantis Solid-Wood Slingshot (80 mm)",
+        "material": "Solid figured red-brown hardwood, brass tip plates, hand-polished oil and wax finish",
+        "description": "The large-pattern Mantis is a one-of-one handmade solid-wood slingshot with an 80 mm outer fork width, 17 mm fork tips, and a 130 mm overall height. Its broad shoulders flow into a rounded palm-filling handle, while the asymmetric sculpting provides a secure natural hold. You will receive the exact fork pictured.",
+        "price": "USD 188.00",
+        "images": [
+            "/images/products/IMG_3143.webp",
+            "/images/products/IMG_3144.webp",
+            "/images/products/IMG_3145.webp",
+            "/images/products/IMG_3146.webp",
+            "/images/products/IMG_3147.webp"
+        ]
+    },
+    {
         "id": "bands-pro-latex-pack-10",
         "category": "bands",
         "name": "Pro Tapered Flat Bandsets (10-Pack)",

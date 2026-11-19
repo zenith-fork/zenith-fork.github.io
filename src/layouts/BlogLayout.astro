@@ -6,6 +6,7 @@ interface BlogFrontmatter {
   description: string;
   keywords: string[];
   date: string | Date;
+  updated?: string | Date;
   path: string;
   image?: string;
 }
@@ -33,23 +34,40 @@ const siteOrigin = Astro.site ?? new URL("https://zenith-fork.github.io");
 const canonicalUrl = new URL(frontmatter.path, siteOrigin);
 const socialImageUrl = new URL(frontmatter.image ?? "/images/zenith-fork-social.png", siteOrigin);
 const publishDate = new Date(frontmatter.date);
+const modifiedDate = new Date(frontmatter.updated ?? frontmatter.date);
 const displayDate = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   month: "long",
   day: "numeric",
 }).format(publishDate);
+const displayModifiedDate = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+}).format(modifiedDate);
+const authorUrl = new URL("/about/", siteOrigin);
+const blogUrl = new URL("/blog/", siteOrigin);
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   headline: frontmatter.title,
   description: frontmatter.description,
   datePublished: publishDate.toISOString(),
-  dateModified: publishDate.toISOString(),
+  dateModified: modifiedDate.toISOString(),
   mainEntityOfPage: canonicalUrl.toString(),
   image: socialImageUrl.toString(),
-  author: { "@type": "Organization", name: "Zenith Fork Studio", url: siteOrigin.toString() },
-  publisher: { "@type": "Organization", name: "Zenith Fork Studio", url: siteOrigin.toString() },
+  author: { "@type": "Organization", name: "Zenith Fork Studio", url: authorUrl.toString() },
+  publisher: { "@type": "Organization", name: "Zenith Fork Studio", url: authorUrl.toString() },
+};
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Store", item: siteOrigin.toString() },
+    { "@type": "ListItem", position: 2, name: "Journal", item: blogUrl.toString() },
+    { "@type": "ListItem", position: 3, name: frontmatter.title, item: canonicalUrl.toString() },
+  ],
 };
 ---
 
@@ -75,7 +93,7 @@ const articleSchema = {
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={`${frontmatter.title} — Zenith Fork Studio`} />
     <meta property="article:published_time" content={publishDate.toISOString()} />
-    <meta property="article:modified_time" content={publishDate.toISOString()} />
+    <meta property="article:modified_time" content={modifiedDate.toISOString()} />
     <meta property="article:author" content="Zenith Fork Studio" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={frontmatter.title} />
@@ -83,18 +101,32 @@ const articleSchema = {
     <meta name="twitter:image" content={socialImageUrl} />
     <meta name="twitter:image:alt" content={`${frontmatter.title} — Zenith Fork Studio`} />
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   </head>
   <body class="min-h-screen bg-zinc-950 text-zinc-300 antialiased">
     <main class="max-w-3xl mx-auto px-6 py-12 text-zinc-300">
       <header class="mb-10 border-b border-zinc-800 pb-8">
-        <a class="text-sm font-semibold text-amber-400 hover:text-amber-300" href="/">← Back to Store</a>
+        <nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold" aria-label="Article navigation">
+          <a class="text-amber-400 hover:text-amber-300" href="/">← Store</a>
+          <a class="text-zinc-400 hover:text-white" href="/blog/">Journal</a>
+          <a class="text-zinc-400 hover:text-white" href="/about/">Workshop</a>
+        </nav>
         <h1 class="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">{frontmatter.title}</h1>
-        <time class="mt-4 block text-sm text-zinc-500" datetime={publishDate.toISOString()}>{displayDate}</time>
+        <div class="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-sm text-zinc-500">
+          <span>By <a class="font-medium text-zinc-300 hover:text-amber-400" href="/about/">Zenith Fork Studio</a></span>
+          <span aria-hidden="true">·</span>
+          <time datetime={publishDate.toISOString()}>Published {displayDate}</time>
+          {frontmatter.updated && <><span aria-hidden="true">·</span><time datetime={modifiedDate.toISOString()}>Updated {displayModifiedDate}</time></>}
+        </div>
       </header>
 
       <article class="prose prose-invert prose-zinc max-w-none prose-headings:text-white prose-a:text-amber-400 prose-strong:text-zinc-100 prose-code:text-amber-300">
         <slot />
       </article>
+      <footer class="mt-14 border-t border-zinc-800 pt-8 text-sm leading-7 text-zinc-500">
+        <p>Written and reviewed by Zenith Fork Studio. Product details refer to the exact handmade pieces photographed on this site.</p>
+        <p class="mt-3"><a class="font-semibold text-amber-400 hover:text-amber-300" href="/about/">About the workshop →</a></p>
+      </footer>
     </main>
   </body>
 </html>

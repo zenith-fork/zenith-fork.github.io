@@ -1,0 +1,73 @@
+---
+import "../styles/global.css";
+
+const siteOrigin = Astro.site ?? new URL("https://zenith-fork.github.io");
+const canonicalUrl = new URL("/about/", siteOrigin);
+const socialImageUrl = new URL("/images/zenith-fork-social.png", siteOrigin);
+const pageTitle = "About Zenith Fork Studio | Handmade Wooden Slingshots";
+const pageDescription = "Meet Zenith Fork Studio, a small workshop focused on one-of-one solid-wood slingshots, careful shaping, honest measurements, and exact-item photography.";
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": new URL("/#organization", siteOrigin).toString(),
+  name: "Zenith Fork Studio",
+  url: siteOrigin.toString(),
+  email: "hucdmail@gmail.com",
+  image: socialImageUrl.toString(),
+  description: pageDescription,
+};
+---
+
+<!doctype html>
+<html lang="en" class="bg-zinc-950">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Zenith Fork Studio" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  </head>
+  <body class="min-h-screen bg-zinc-950 text-zinc-300 antialiased">
+    <header class="border-b border-zinc-800">
+      <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-5" aria-label="About navigation">
+        <a class="font-black tracking-[0.22em] text-white" href="/">ZENITH.FORK</a>
+        <div class="flex items-center gap-5 text-sm font-semibold"><a class="text-zinc-400 hover:text-white" href="/blog/">Journal</a><a class="text-amber-400 hover:text-amber-300" href="/">← Store</a></div>
+      </nav>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-6 py-16 sm:py-24">
+      <div class="grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+        <article class="prose prose-invert prose-zinc max-w-none prose-headings:text-white prose-a:text-amber-400 prose-strong:text-zinc-100">
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-amber-400">The workshop</p>
+          <h1>Hand-shaped wood, photographed honestly</h1>
+          <p class="lead">Zenith Fork Studio is a small workshop focused on one-of-one solid-wood slingshots and carefully specified replacement latex bandsets.</p>
+          <p>Each wooden frame begins with the actual piece of timber, not a promise that every copy will look the same. Grain direction, density, balance, fork geometry, and the way the handle settles into the hand all influence the final shape.</p>
+          <p>That is why our product pages show multiple photographs of the exact slingshot being offered. Measurements such as outer fork width, fork-tip width, and overall height are stated wherever they are known. If a wood species or specification cannot be confirmed, we describe only what can be verified.</p>
+          <h2>What we make and select</h2>
+          <p>The collection centres on handmade solid-wood frames, including compact Flying Tiger patterns, fuller palm-swell shapes, traditional wrap-and-tuck tips, and quick-clamp designs. We also offer tapered natural-latex bandsets selected to complement wooden slingshot setups.</p>
+          <h2>Why the journal exists</h2>
+          <p>The <a href="/blog/">workshop journal</a> records practical notes on wood selection, frame dimensions, grip shape, band attachment, and maintenance. Its purpose is to answer the questions that product photographs alone cannot.</p>
+          <h2>Questions about an exact piece</h2>
+          <p>Availability, shipping, suitability, and payment are confirmed directly by email before an order proceeds. Contact <a href="mailto:hucdmail@gmail.com">hucdmail@gmail.com</a> and include the product name and delivery country or region.</p>
+        </article>
+
+        <figure class="overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/80 shadow-2xl shadow-black/30">
+          <img class="aspect-square w-full object-cover" src="/images/products/IMG_3145.webp" alt="Handmade solid-wood Large Mantis slingshot shaped by Zenith Fork Studio" width="3008" height="3008" loading="eager" fetchpriority="high" />
+          <figcaption class="px-5 py-4 text-sm leading-6 text-zinc-400">A one-of-one solid-wood frame shown as the exact finished piece.</figcaption>
+        </figure>
+      </div>
+    </main>
+  </body>
+</html>

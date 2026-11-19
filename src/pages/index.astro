@@ -17,10 +17,72 @@ interface Product {
 const catalog = products as Product[];
 const forks = catalog.filter((product) => product.category === "forks");
 const bands = catalog.filter((product) => product.category === "bands");
-const canonicalUrl = new URL("/", Astro.site ?? "https://zenith-fork.github.io");
+const siteOrigin = Astro.site ?? new URL("https://zenith-fork.github.io");
+const canonicalUrl = new URL("/", siteOrigin);
 const socialImageUrl = new URL("/images/zenith-fork-social.png", canonicalUrl);
 const pageTitle = "Zenith Fork | Handmade Wooden Slingshots & Latex Bands";
 const pageDescription = "Explore one-of-one handmade wooden slingshots and precision-cut replacement latex flat bands from Zenith Fork Studio.";
+
+const productListItems = catalog.map((product, index) => {
+  const numericPrice = String(product.price).match(/\d+(?:\.\d+)?/)?.[0];
+  const productUrl = new URL(`/products/${product.id}/`, siteOrigin).toString();
+  const productImages = (product.images ?? (product.image ? [product.image] : [])).map((image) => new URL(image, siteOrigin).toString());
+
+  return {
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "Product",
+      "@id": productUrl,
+      name: product.name,
+      description: product.description,
+      image: productImages,
+      material: product.material,
+      category: product.category === "forks" ? "Handmade wooden slingshots" : "Latex slingshot bands",
+      brand: { "@type": "Brand", name: "Zenith Fork Studio" },
+      url: productUrl,
+      ...(numericPrice ? {
+        offers: {
+          "@type": "Offer",
+          price: numericPrice,
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          itemCondition: "https://schema.org/NewCondition",
+          url: productUrl,
+          seller: { "@id": new URL("/#organization", siteOrigin).toString() },
+        },
+      } : {}),
+    },
+  };
+});
+
+const homepageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": new URL("/#organization", siteOrigin).toString(),
+      name: "Zenith Fork Studio",
+      url: canonicalUrl.toString(),
+      email: "hucdmail@gmail.com",
+      image: socialImageUrl.toString(),
+      description: "A small workshop focused on one-of-one solid-wood slingshots and replacement latex flat bands.",
+    },
+    {
+      "@type": "WebSite",
+      "@id": new URL("/#website", siteOrigin).toString(),
+      url: canonicalUrl.toString(),
+      name: "Zenith Fork Studio",
+      publisher: { "@id": new URL("/#organization", siteOrigin).toString() },
+    },
+    {
+      "@type": "ItemList",
+      name: "Zenith Fork Studio product collection",
+      numberOfItems: productListItems.length,
+      itemListElement: productListItems,
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -28,7 +90,7 @@ const pageDescription = "Explore one-of-one handmade wooden slingshots and preci
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="google-site-verification" content="rrmNaQI2x0HRujMUV5DeUP1tMoeS_c778mcjmXnxRhk" />
+    <meta name="google-site-verification" content="Hjfq1NrQB-3VyZxsPCzZFsIdMtlsxWmS4fQnUekuxB8" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
     <meta name="robots" content="index, follow" />
@@ -49,6 +111,7 @@ const pageDescription = "Explore one-of-one handmade wooden slingshots and preci
     <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content={socialImageUrl} />
     <meta name="twitter:image:alt" content="Handcrafted ebony wooden slingshot by Zenith Fork Studio" />
+    <script type="application/ld+json" set:html={JSON.stringify(homepageSchema)} />
   </head>
 
   <body class="min-h-screen bg-zinc-950 text-zinc-300 antialiased selection:bg-amber-400 selection:text-zinc-950">
@@ -60,6 +123,7 @@ const pageDescription = "Explore one-of-one handmade wooden slingshots and preci
           <a class="transition hover:text-amber-400" href="#consumables">Consumables</a>
           <a class="transition hover:text-amber-400" href="#learn">Learn</a>
           <a class="transition hover:text-amber-400" href="/blog/">Journal</a>
+          <a class="transition hover:text-amber-400" href="/about/">Workshop</a>
           <a class="transition hover:text-amber-400" href="#contact">Contact</a>
         </div>
       </nav>
@@ -103,16 +167,16 @@ const pageDescription = "Explore one-of-one handmade wooden slingshots and preci
       <article id="learn" class="mx-auto max-w-3xl scroll-mt-28 px-6 py-24 leading-8 text-zinc-300">
         <p class="text-sm font-semibold uppercase tracking-[0.24em] text-amber-400">Workshop notes / 2026</p>
         <h2 class="mt-3 text-2xl font-semibold text-white">
-          Choosing Bands and Ammo for a Handmade Wooden Slingshot
+          Choosing Flat Bands for a Handmade Wooden Slingshot
         </h2>
 
         <p class="mt-8">
-          A handheld slingshot is a simple elastic system. Its wooden frame holds the bands, the latex stretches during the pull, and the ammo carries that released energy toward the target. Small inconsistencies at any stage become more noticeable over distance. That is why a custom wooden slingshot should be evaluated as a complete setup, not merely a carved object. Dense exotic timbers provide a stable frame, while a carefully shaped asymmetric grip helps the user repeat the same hand position. In a handmade wooden slingshot, comfort is therefore part of consistency: a natural grip reduces unnecessary movement during each shot.
+          A handheld slingshot is a simple elastic system, but the way its parts work together matters. The wooden frame anchors the bands, the latex stores energy during the draw, and the pouch must return cleanly when released. Small inconsistencies become more noticeable over distance. That is why a custom wooden slingshot should be evaluated as a complete setup, not merely as a carved object. Dense hardwood provides a stable frame, while a carefully shaped grip helps the user repeat the same hand position. In a handmade wooden slingshot, comfort is part of consistency: a natural hold reduces unnecessary movement during each shot.
         </p>
 
-        <h3 class="mt-10 text-2xl font-semibold text-white">Matching slingshot ammo to the bands</h3>
+        <h3 class="mt-10 text-2xl font-semibold text-white">Start with the frame and your draw length</h3>
         <p class="mt-4">
-          Ammo weight changes how a slingshot band set feels and performs. A heavier steel ball accelerates more slowly and needs bands suited to its weight. A lighter eco-clay pellet is useful for controlled practice, but it follows a different path to the target. Weight-sorted ammo improves consistency because each shot leaves the pouch under similar conditions. For repeatable target practice, diameter alone is not enough; weight, roundness, surface finish, and the way the ball sits in the pouch all matter.
+          Band choice begins with the fork tips, attachment method, and the user's measured draw length. A band that is too short can feel harsh and may wear quickly; one that is too long can feel slow and make a clean release harder to repeat. The useful starting point is a moderate setup that suits the frame and the person using it. From there, active band length and taper can be adjusted in small steps. Record each change instead of replacing several variables at once, and stop using any band that shows cuts, whitening, or damaged edges.
         </p>
 
         <h3 class="mt-10 text-2xl font-semibold text-white">Why a tapered flat band improves efficiency</h3>
@@ -122,7 +186,7 @@ const pageDescription = "Explore one-of-one handmade wooden slingshots and preci
 
         <h3 class="mt-10 text-2xl font-semibold text-white">The best wooden slingshot is a balanced setup</h3>
         <p class="mt-4">
-          The best wooden slingshot is not automatically the model with the strongest bands. It is the wooden frame, band, pouch, and projectile combination that the user can handle consistently. Zenith Fork Studio pairs comfortable hardwood frames with clearly specified replacement bandsets so each component has a clear role. Use eye protection, maintain a secure backstop, inspect the bands before use, and follow all local laws. Consistent target practice begins with careful setup before each shot.
+          The best wooden slingshot is not automatically the model with the strongest bands. It is the hardwood frame, band, and pouch combination that the user can handle consistently. Zenith Fork Studio pairs comfortable solid-wood frames with clearly specified replacement bandsets so each component has a clear role. Use eye protection, maintain a secure backstop, inspect the bands before use, and follow all local laws. Consistent target practice begins with careful setup before each shot.
         </p>
       </article>
     </main>
@@ -145,6 +209,7 @@ const pageDescription = "Explore one-of-one handmade wooden slingshots and preci
         After availability, destination, payment, and shipping are confirmed by email, wooden slingshots are discreetly packed in unmarked parcels using DDP tax-inclusive routes. We cannot accept or fulfill requests for Singapore or Australia (NSW/VIC). Do not request shipment where slingshots or related items are prohibited by local law.
       </p>
       <p class="mt-5">© {new Date().getFullYear()} Zenith Fork Studio. Use responsibly and comply with local law.</p>
+      <p class="mt-3"><a class="transition hover:text-amber-400" href="/about/">About the workshop</a> · <a class="transition hover:text-amber-400" href="/blog/">Workshop journal</a></p>
     </footer>
   </body>
 </html>

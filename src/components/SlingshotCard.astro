@@ -16,6 +16,7 @@ if (productImages.length === 0) {
   throw new Error(`Product ${id} must provide an image or a non-empty images array.`);
 }
 const hasMultipleImages = productImages.length > 1;
+const transparentPlaceholder = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";
 const categoryLabel = {
   forks: "wooden slingshot",
   bands: "latex bands",
@@ -58,7 +59,8 @@ const mailtoUrl = `mailto:hucdmail@gmail.com?subject=${encodeURIComponent(emailS
             "carousel-slide absolute inset-0 h-full w-full object-cover transition duration-500 motion-reduce:transition-none",
             index === 0 ? "opacity-100" : "pointer-events-none opacity-0",
           ]}
-          src={productImage}
+          src={index === 0 ? productImage : transparentPlaceholder}
+          data-src={index === 0 ? undefined : productImage}
           alt={`${name} — ${material}${hasMultipleImages ? ` — view ${index + 1} of ${productImages.length}` : ""}`}
           width="720"
           height="720"
@@ -108,7 +110,7 @@ const mailtoUrl = `mailto:hucdmail@gmail.com?subject=${encodeURIComponent(emailS
 
   <div class="flex flex-1 flex-col p-6">
     <p class="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-amber-400">{categoryLabel}</p>
-    <h3 id={`${id}-title`} class="text-xl font-semibold tracking-tight text-white">{name}</h3>
+    <h3 id={`${id}-title`} class="text-xl font-semibold tracking-tight text-white"><a href={`/products/${id}/`} class="hover:text-amber-400">{name}</a></h3>
     <p class="mt-2 text-sm text-zinc-400">{material}</p>
     <p class="mt-4 flex-1 leading-7 text-zinc-300">{description}</p>
 
@@ -140,8 +142,18 @@ const mailtoUrl = `mailto:hucdmail@gmail.com?subject=${encodeURIComponent(emailS
     let currentIndex = 0;
     let touchStartX = 0;
 
+    const loadSlide = (index: number) => {
+      const slide = slides[index];
+      const deferredSource = slide?.dataset.src;
+      if (slide instanceof HTMLImageElement && deferredSource) {
+        slide.src = deferredSource;
+        delete slide.dataset.src;
+      }
+    };
+
     const showSlide = (nextIndex: number) => {
       currentIndex = (nextIndex + slides.length) % slides.length;
+      loadSlide(currentIndex);
 
       slides.forEach((slide, index) => {
         const isActive = index === currentIndex;
