@@ -42,6 +42,8 @@ Take time at this stage. It is easier to correct alignment before the first turn
 
 ## Use a suitable tying strip
 
+If you are comparing supplies, our [guide to amber band-tying tape](/blog/amber-tying-tape-for-slingshot-bands/) explains what a roll contains and how binding material differs from a finished shooting bandset.
+
 The tying material needs enough elasticity and grip to hold its tension without cutting into the main band. Narrow latex strips are commonly used. Whatever material is chosen, it should be clean, undamaged, and compatible with the band.
 
 Start with controlled tension and overlap the turns neatly. Each wrap should support the previous one without forming a hard ridge. Excessive stretching does not compensate for poor placement; it can damage the tying strip, deform the main band, or make removal unnecessarily difficult.
