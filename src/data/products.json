@@ -60,6 +60,34 @@
         ]
     },
     {
+        "id": "fork-sculpted-solid-wood-85",
+        "category": "forks",
+        "name": "Sculpted Solid-Wood Slingshot (85 mm)",
+        "material": "Solid red-brown hardwood with a polished surface; all-wood frame",
+        "description": "A one-of-one solid-wood slingshot with warm red-brown grain, broad sweeping shoulders, and a deeply sculpted handle that flows into a rounded palm swell. The flared, rounded fork tips and smooth contours give the frame a distinctive all-wood profile. Measures 85 mm across the outer forks with 18 mm fork tips. You will receive the exact wooden frame pictured; confirm band attachment and included accessories by email.",
+        "price": "USD 169.00",
+        "images": [
+            "/images/products/IMG_3153.webp",
+            "/images/products/IMG_3154.webp",
+            "/images/products/IMG_3155.webp",
+            "/images/products/IMG_3156.webp"
+        ]
+    },
+    {
+        "id": "bands-amber-tying-tape-20m",
+        "category": "bands",
+        "name": "Amber Band-Tying Tape — 20 m Roll",
+        "material": "Translucent flexible band-tying tape on a plastic spool",
+        "description": "A 20-metre roll of translucent amber tying tape for securing slingshot flat bands with traditional wrap-and-tuck ties. The narrow, flexible strip unwinds from a compact plastic spool so you can cut the length needed for each attachment. This is tying material, not a complete shooting bandset. Sold individually: USD 12.80 per 20 m roll. Photos show several rolls for illustration; the listed price is for one roll.",
+        "price": "USD 12.80 / roll (20 m)",
+        "images": [
+            "/images/products/IMG_3150.webp",
+            "/images/products/IMG_3149.webp",
+            "/images/products/IMG_3151.webp",
+            "/images/products/IMG_3152.webp"
+        ]
+    },
+    {
         "id": "bands-pro-latex-pack-10",
         "category": "bands",
         "name": "Pro Tapered Flat Bandsets (10-Pack)",

@@ -28,6 +28,8 @@ For a pinch hold, examine the area immediately beneath the forks. For thumb supp
 
 ## Compare Flying Tiger and Large Mantis dimensions
 
+For a closer look at just these two patterns, read the [Flying Tiger versus Large Mantis comparison](/blog/flying-tiger-vs-large-mantis-wooden-slingshot/). If the grip is asymmetric, also [confirm which hand the frame is shaped to fit](/blog/left-or-right-handed-wooden-slingshot/) before ordering.
+
 The two solid-wood frames below both measure 80 mm across the outside of the fork tips. The rest of their geometry is different.
 
 | Finished measurement | Flying Tiger round-tip | Large Mantis |
