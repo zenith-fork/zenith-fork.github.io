@@ -98,6 +98,8 @@ The [tapered replacement bandsets](/products/bands-pro-latex-pack-10/) are a sep
 
 ## Questions worth asking before payment
 
+Use the [measurement checklist](/blog/wooden-slingshot-measurements-checklist/) when requesting missing dimensions. After delivery, the [arrival inspection guide](/blog/check-handmade-wooden-slingshot-on-arrival/) explains how to compare the received frame with the confirmed listing.
+
 ### Will I receive the exact wooden slingshot pictured?
 
 Our one-of-one frames are offered as the exact piece shown. Confirm that the listing is still available before paying. Grain patterns and hand-shaped details cannot be reproduced exactly in another frame.
