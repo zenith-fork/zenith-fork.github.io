@@ -1,5 +1,34 @@
 [
     {
+        "id": "fork-desert-ironwood-classic-90",
+        "category": "forks",
+        "name": "Desert Ironwood Solid-Wood Slingshot (90 mm)",
+        "material": "Solid desert ironwood with golden-brown tones, darker flowing grain, and a polished surface",
+        "description": "A handmade solid desert ironwood slingshot with a broad, open U-shaped outline and warm golden-brown grain. Smooth, rounded shoulders flow into a gently waisted handle with a fuller rounded base. Its metal-free wooden tips preserve a clean, traditional profile. Measures 90 mm across the outer forks, with 20 mm fork tips and a 125 mm overall height. The four-image gallery shows the exact frame offered. Confirm the intended band attachment method, included accessories, and price by email before ordering.",
+        "price": "USD 138.00",
+        "images": [
+            "/images/products/IMG_3177.webp",
+            "/images/products/IMG_3176.webp",
+            "/images/products/IMG_3175.webp",
+            "/images/products/IMG_3174.webp"
+        ]
+    },
+    {
+        "id": "fork-golden-grain-solid-wood-80",
+        "category": "forks",
+        "name": "Golden-Grain Sculpted Solid-Wood Slingshot (80 mm)",
+        "material": "Solid golden-brown wood with contrasting darker grain, polished surface, and metal tip plates; wood species unconfirmed",
+        "description": "A handmade solid-wood slingshot with warm golden-brown tones and flowing dark grain. Broad, gently swept shoulders narrow into a deeply sculpted waist before expanding into a rounded palm swell and flared base. Rounded fork tips carry metal tip plates, while the side views reveal the handle's pronounced contours. Dimensions: 80 mm outer fork width, 15 mm fork tips, and approximately 130 mm overall height. The gallery shows the exact frame offered. Confirm the intended holding hand, band attachment method, included accessories, and price by email before ordering.",
+        "price": "USD 169.00",
+        "images": [
+            "/images/products/IMG_3178.webp",
+            "/images/products/IMG_3179.webp",
+            "/images/products/IMG_3180.webp",
+            "/images/products/IMG_3181.webp",
+            "/images/products/IMG_3182.webp"
+        ]
+    },
+    {
         "id": "fork-desert-ironwood-flying-tiger",
         "category": "forks",
         "name": "Desert Ironwood \"Flying Tiger\" Quick-Clamp Slingshot",

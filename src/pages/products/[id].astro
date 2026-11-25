@@ -15,7 +15,7 @@ const schema = {
   name: product.name, description: product.description, material: product.material,
   image: product.images.map(src => new URL(src, Astro.site).toString()),
   url: canonical.toString(), brand: { '@type': 'Brand', name: 'Zenith Fork Studio' },
-  offers: { '@type': 'Offer', price: String(product.price).match(/\d+(?:\.\d+)?/)?.[0], priceCurrency: 'USD', url: canonical.toString(), itemCondition: 'https://schema.org/NewCondition', seller: { '@type': 'Organization', name: 'Zenith Fork Studio', email: 'hucdmail@gmail.com' } }
+  ...(String(product.price).match(/\d+(?:\.\d+)?/) ? { offers: { '@type': 'Offer', price: String(product.price).match(/\d+(?:\.\d+)?/)?.[0], priceCurrency: 'USD', url: canonical.toString(), itemCondition: 'https://schema.org/NewCondition', seller: { '@type': 'Organization', name: 'Zenith Fork Studio', email: 'hucdmail@gmail.com' } } } : {})
 };
 const related = products.filter(p => p.id !== product.id && p.category === product.category).slice(0, 2);
 ---

@@ -100,6 +100,8 @@ The [tapered replacement bandsets](/products/bands-pro-latex-pack-10/) are a sep
 
 ## Questions worth asking before payment
 
+For two newer pieces, see our close looks at the [90 mm Desert Ironwood frame](/blog/desert-ironwood-90mm-slingshot-frame/) and [80 mm Golden-Grain sculpted frame](/blog/golden-grain-80mm-sculpted-wooden-slingshot/). Each article links to the exact-item gallery and separates confirmed dimensions from details to request.
+
 Use the [measurement checklist](/blog/wooden-slingshot-measurements-checklist/) when requesting missing dimensions. After delivery, the [arrival inspection guide](/blog/check-handmade-wooden-slingshot-on-arrival/) explains how to compare the received frame with the confirmed listing.
 
 ### Will I receive the exact wooden slingshot pictured?
