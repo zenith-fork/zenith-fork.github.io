@@ -92,6 +92,8 @@ Look for clear photographs of both faces, the fork roots, and the sides. Ask abo
 
 ## Keep replacement bands in the decision
 
+Our [frame, bandset, and tying tape guide](/blog/slingshot-frame-vs-bandset-what-is-included/) explains which supplies are separate products. For material descriptions, see [wood grain versus species](/blog/wood-grain-vs-species-wooden-slingshot/).
+
 Before buying, confirm the intended band orientation, attachment compatibility, and what is included. Frame price does not tell you whether a fitted bandset or spare bands are supplied.
 
 The [tapered replacement bandsets](/products/bands-pro-latex-pack-10/) are a separate listing. Tell us your frame and measured draw length when asking about suitability. Tip width alone is not enough to choose the working length or the complete setup.
