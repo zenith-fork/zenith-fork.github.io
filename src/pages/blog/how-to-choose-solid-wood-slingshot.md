@@ -28,6 +28,8 @@ For a pinch hold, examine the area immediately beneath the forks. For thumb supp
 
 ## Compare Flying Tiger and Large Mantis dimensions
 
+The newer [three-way 80 mm frame comparison](/blog/three-80mm-solid-wood-slingshots-compared/) adds Golden-Grain to the shortlist. For attachment details, read [metal tip plates versus bare wooden tips](/blog/wooden-slingshot-tips-metal-plates-vs-bare-wood/).
+
 Also considering the newer, wider frame? See [80 mm versus 85 mm wooden slingshot dimensions](/blog/80mm-vs-85mm-wooden-slingshot/), and use our [product photograph guide](/blog/how-to-read-wooden-slingshot-product-photos/) to compare the galleries.
 
 For a closer look at just these two patterns, read the [Flying Tiger versus Large Mantis comparison](/blog/flying-tiger-vs-large-mantis-wooden-slingshot/). If the grip is asymmetric, also [confirm which hand the frame is shaped to fit](/blog/left-or-right-handed-wooden-slingshot/) before ordering.
